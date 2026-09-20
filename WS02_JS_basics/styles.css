@@ -28,3 +28,16 @@ a {
 a:hover {
     text-decoration: underline;
 }
+.button:hover {
+    background-color: #038c4e;
+    color: #ef1212;
+}
+
+.button {
+    background-color: #038c4e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
