@@ -15,9 +15,43 @@ const formResult = document.getElementById("formResult");
 animalForm.addEventListener("submit", function (event) {
     event.preventDefault();
     // TODO: Clear previous errors / Tyhjennä edelliset virheet.
+    nameError.textContent = "";
+    speciesError.textContent = "";
+    noteError.textContent = "";
     // TODO: Read and trim values / Lue ja trimmaa kenttien arvot.
+    const name = animalName.value.trim();
+    const species = animalSpecies.value.trim();
+    const note = careNote.value.trim();
+
+    animalName.classList.remove("invalid");
+    animalSpecies.classList.remove("invalid");
+    careNote.classList.remove("invalid");
+
+    let isValid = true;
     // TODO: Validate and show errors / Validoi ja näytä virheet.
+    if (name === "") {
+        nameError.textContent = "Name is required.";
+        animalName.classList.add("invalid");
+        isValid = false;
+    }
+    if (species === "") {
+        speciesError.textContent = "Species is required.";
+        animalSpecies.classList.add("invalid");
+        isValid = false;
+    }
+    if (note.length < 1 || note.length > 150) {
+        noteError.textContent = "Care note must contain 1–150 characters.";
+        careNote.classList.add("invalid");
+        isValid = false;
+    }
     // TODO: If valid, show the result / Näytä hyväksytty tulos.
+    if (isValid) {
+        formResult.textContent = `Animal: ${name} (${species}) - Note: ${note}`;
+        
+        console.log(name);
+        console.log(species);
+        console.log(note);
+    }
     // TODO: Create { name, species, note } and save it as JSON.
     // TODO: Luo { name, species, note } ja tallenna se JSON-tekstinä.
 });
