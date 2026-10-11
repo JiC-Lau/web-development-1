@@ -51,12 +51,12 @@ animalForm.addEventListener("submit", function (event) {
         console.log(name);
         console.log(species);
         console.log(note);
-    }
+    
     // TODO: Create { name, species, note } and save it as JSON.
-    if (isValid) {
+    
         const animalData = { name, species, note };
         localStorage.setItem("ws05Animal", JSON.stringify(animalData));
-        console.log(animialData);
+        console.log(animalData);
     }
 });
 
