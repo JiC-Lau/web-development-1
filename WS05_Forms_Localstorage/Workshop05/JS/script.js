@@ -46,7 +46,7 @@ animalForm.addEventListener("submit", function (event) {
     }
     // TODO: If valid, show the result / Näytä hyväksytty tulos.
     if (isValid) {
-        formResult.textContent = `Animal: ${name} (${species}) - Note: ${note}`;
+        formResult.textContent = name + " / " + species + " / " + note;
         
         console.log(name);
         console.log(species);
@@ -66,10 +66,26 @@ const discountMessage = document.getElementById("discountMessage");
 sponsorForm.addEventListener("submit", function (event) {
     event.preventDefault();
     // TODO: Convert input values with Number().
-    // TODO: Muunna syötteet numeroiksi Number()-funktiolla.
+    const annualFee = Number(animalType.value);
+    const numberOfYears = Number(yearsInput.value);
+
     // TODO: Calculate the price and apply discounts.
-    // TODO: Laske hinta ja alennukset.
-    // TODO: Show the result / Näytä tulos.
+    let total = annualFee * numberOfYears;
+   
+    if (numberOfYears >= 5) {
+        total = total * 0.8;
+        total = total - 5;
+        discountMessage.textContent = "20% discount and €5 additional discount applied.";
+    } else if (numberOfYears > 2) {
+        total = total * 0.8;
+        discountMessage.textContent = "20% discount applied.";
+    } else {
+        discountMessage.textContent = "No discount applied.";
+    }
+
+    // TODO: Show the result.
+    cost.textContent = "Total: €" + total.toFixed(2);
+
 });
 
 // Exercise 4 / Harjoitus 4
