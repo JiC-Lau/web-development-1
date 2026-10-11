@@ -115,7 +115,7 @@ loadButton.addEventListener("click", loadAnimal);
 clearButton.addEventListener("click", function () {
     localStorage.removeItem("ws05Animal");
     loadAnimal();
-} 
+});
 
 // TODO: Call loadAnimal() here to restore data when the page opens.
 loadAnimal();
