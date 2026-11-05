@@ -1,8 +1,5 @@
 var data = JSON.parse(text);
 
-var button = document.getElementById("showNames");
-button.addEventListener("click", showNames);
-
 function showNames() {
     var output = " ";
     for (var i = 0; i < data.employees.length; i++) {
