@@ -43,8 +43,8 @@
 	<p>There are two buttons below. Edit the source code and add onclick event handlers to them. Implement the
 		functionality described here.</p>
 	<p>
-		<button>Load raw data</button>
-		<button>Load and parse data</button>
+		<button id="loadRawDataButton" onclick="loadRawData()">Load raw data</button>
+		<button id="loadParsedDataButton" onclick="loadParsedData()">Load and parse data</button>
 	</p>
 
 	<ul>
@@ -71,20 +71,20 @@
 		Click the link to see the response.</p>
 	<ul>
 		<li>First, create an app that displays raw weather data (temperature, cloud cover, and humidity) for a
-			specified city when a button is clicked. <button>Fetch data</button></li>
+			specified city when a button is clicked. <button id="fetchDataButton" onclick="fetchWeatherData()">Fetch data</button></li>
 		<li>Once this works, parse the data and display it in a div.</li>
 		<li>Next, add an onchange event to the drop-down menu so users can choose which city's data to display.</li>
 		<li>Finally, add functionality to the input field so users can enter a search query, send it to the
 			OpenWeatherMap API, and display the results in the app.</li>
 	</ul>
 	<p>Select a city from the list:</p>
-	<select name="mySelect" id="city" onchange="">
+	<select name="mySelect" id="city" onchange="fetchWeatherData()">
 		<option value="Helsinki">Helsinki</option>
 		<option value="Stockholm">Stockholm</option>
 		<option value="Rome">Rome</option>
 		<option value="New York">New York</option>
 	</select>
-	<p>Or enter a search term: <input id="citysearch" /><button id="search">Search</button></p>
+	<p>Or enter a search term: <input id="citysearch" /><button id="search" onclick="searchWeatherData()">Search</button></p>
 	<div id="weatherdata">Weather information will appear here.</div>
 
 </body>
