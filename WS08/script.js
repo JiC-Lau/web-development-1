@@ -20,7 +20,7 @@ document.getElementById("fetchdata").addEventListener("click", async () => {
         );
         
         // q=Helsinki selects the city.
-
+        
         // units=metric gives the temperature in Celsius.
         // mode=xml requests the data in XML format.
         // ${apiKey} inserts our API key into the URL.
@@ -30,6 +30,7 @@ document.getElementById("fetchdata").addEventListener("click", async () => {
         if (!response.ok) {
          // Create an error and jump to the catch block.
             throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
         // Read the response body as text and wait until it is ready.
         const xmlText = await response.text();
